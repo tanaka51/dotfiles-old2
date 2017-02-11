@@ -6,7 +6,7 @@ My dotfiles managed by rcm.
 
 - Install [rcm](https://github.com/thoughtbot/rcm)
 - Clone this repositoy and go there
-- run a following command:
+- Run a following command:
   ```
   $ rcup -v -d `pwd` -x README.md
   ```
