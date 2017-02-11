@@ -82,7 +82,7 @@ export GOPATH=$HOME
 
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$PATH:/usr/local/go/bin" # install golang on /usr/local/go
-export PATH="./mybin:/usr/local/bin:$PATH"
+export PATH="./bin:./mybin:/usr/local/bin:$PATH"
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
@@ -142,5 +142,3 @@ function free-boot () {
 function tn () {
   tmux new -s $(basename $(pwd))
 }
-
-export PATH="./bin:$PATH"
