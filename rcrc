@@ -1,0 +1,2 @@
+DOTFILES_DIRS="~/src/github.com/tanaka51/dotfiles"
+EXCLUDES="README.md"
