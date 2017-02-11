@@ -133,12 +133,8 @@ export ANDROID_HOME=~/Android/Sdk
 export PATH="$ANDROID_HOME/tools:$PATH"
 export PATH="$ANDROID_HOME/platform-tools:$PATH"
 
-# free disk space on /boot
-# http://askubuntu.com/questions/89710/how-do-i-free-up-more-space-in-boot
-function free-boot () {
-  sudo apt-get purge $(dpkg -l linux-{image,headers}-"[0-9]*" | awk '/ii/{print $2}' | grep -ve "$(uname -r | sed -r 's/-[a-z]+//')")
-}
-
 function tn () {
   tmux new -s $(basename $(pwd))
 }
+
+[ -f ~/.zsh/zshrc_`uname`  ] && . ~/.zsh/zshrc_`uname`
