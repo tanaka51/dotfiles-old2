@@ -79,12 +79,26 @@ alias tmux='TERM=screen-256color tmux'
 compdef g=git
 
 export GOPATH=$HOME
-
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$PATH:/usr/local/go/bin" # install golang on /usr/local/go
+export PATH="$HOME/.cargo/bin:$PATH" # rust
 export PATH="./bin:./mybin:/usr/local/bin:$PATH"
-# rust
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/usr/local/heroku/bin:$PATH" # Added by the Heroku Toolbelt
+
+# anyenv
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
+
+# virtualenvwrapper
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+source $(which virtualenvwrapper.sh)
+
+# Android
+export ANDROID_HOME=~/Android/Sdk
+export PATH="$ANDROID_HOME/tools:$PATH"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
+
+[ -f ~/.zsh/zshrc_`uname`  ] && . ~/.zsh/zshrc_`uname`
 
 # http://blog.kentarok.org/entry/2014/06/03/135300
 function peco-src () {
@@ -118,23 +132,6 @@ function gim () {
   vim $filename
 }
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# anyenv
-export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init -)"
-
-# virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-source $(which virtualenvwrapper.sh)
-
-export ANDROID_HOME=~/Android/Sdk
-export PATH="$ANDROID_HOME/tools:$PATH"
-export PATH="$ANDROID_HOME/platform-tools:$PATH"
-
 function tn () {
   tmux new -s $(basename $(pwd))
 }
-
-[ -f ~/.zsh/zshrc_`uname`  ] && . ~/.zsh/zshrc_`uname`
